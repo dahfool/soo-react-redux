@@ -1,29 +1,32 @@
 const searchProduct = (state = {
   country: {
-    searchTerm: ""
+    searchTerm: '',
+    countryList: []
   },
-  products: {
-    searchTerm: ""
-  }
+  category: {
+    searchTerm: '',
+    categoryList: []
+  },
+  fetching: false,
+  fetched: false,
+  error: null
 },
-action) => {
-  switch (action.type) {
-    case 'SEARCH_COUNTRIES':
+actions) => {
+  switch (actions.type) {
+    case 'FETCH_COUNTRIES_PENDING':
+      return {...state, fetching: true};
+    case 'FETCH_COUNTRIES_REJECTED':
+      return {...state, fetching: false, error: actions.payload.data};
+    case 'FETCH_COUNTRIES_FULFILLED':
       return {
         ...state,
         country: {
-          searchTerm: action.payload.text
+          searchTerm: actions.payload.searchTerm,
+          countryList: actions.payload.data
         }
       }
-    case 'SEARCH_PRODUCTS':
-      return {
-        ...state,
-        products: {
-          searchTerm: action.payload.text
-        }
-      }
-      default:
-        return state
+    default:
+      return state
   }
 }
 
