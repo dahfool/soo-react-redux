@@ -1,6 +1,8 @@
 import React from 'react'
+import Dropdown from '../containers/dropdown'
 
-const Input = ({active, inputField, children, onChange}) => {
+const Input = ({inputField, children, onChange}) => {
+
   return (
     <div className='form-group'>
       <label for={inputField.id}>{children}</label>

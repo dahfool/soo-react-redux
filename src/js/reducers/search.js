@@ -1,4 +1,4 @@
-const searchProduct = (state = {
+const search = (state = {
   country: {
     searchTerm: '',
     countryList: []
@@ -7,27 +7,42 @@ const searchProduct = (state = {
     searchTerm: '',
     categoryList: []
   },
+  activeField: null,
   fetching: false,
   fetched: false,
   error: null
 },
 actions) => {
   switch (actions.type) {
-    case 'FETCH_COUNTRIES_PENDING':
+    case 'FETCH_PENDING':
       return {...state, fetching: true};
-    case 'FETCH_COUNTRIES_REJECTED':
+    case 'FETCH_REJECTED':
       return {...state, fetching: false, error: actions.payload.data};
     case 'FETCH_COUNTRIES_FULFILLED':
       return {
         ...state,
+        fetching: false,
+        fetched: true,
         country: {
           searchTerm: actions.payload.searchTerm,
           countryList: actions.payload.data
-        }
+        },
+        activeField: 'countries'
+      }
+    case 'FETCH_CATEGORIES_FULFILLED':
+      return {
+        ...state,
+        fetching: false,
+        fetched: true,
+        category: {
+          searchTerm: actions.payload.searchTerm,
+          categoryList: actions.payload.data
+        },
+        activeField: 'categories'
       }
     default:
       return state
   }
 }
 
-export default searchProduct;
+export default search;
