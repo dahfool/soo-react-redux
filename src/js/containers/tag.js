@@ -1,19 +1,15 @@
 import { connect } from 'react-redux'
 import Tag from '../component/tag'
-import search from '../actions/searchActions'
+import tag from '../actions/tagActions'
 
 const mapStateToProps = (state, ownProps) => ({
-  buttons: ownProps.data
+  buttons: ownProps.data,
+  active: ownProps.active
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  onChange: (value, category) => {
-
-    if(category === 'product') {
-      dispatch(search.searchCategories(value))
-    } else {
-      dispatch(search.searchCountries(value))
-    }
+  onClick: (button) => {
+    dispatch(tag.deleteTag(button))
   }
 })
 

@@ -6,6 +6,14 @@ const addTag = (tag) => (
   }
 )
 
+const deleteTag = (tag) => (
+  {
+    type: 'DELETE_TAG',
+    payload: tag
+  }
+)
+
 export default {
-  addTag
+  addTag,
+  deleteTag
 };
