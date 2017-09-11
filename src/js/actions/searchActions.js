@@ -15,6 +15,13 @@ const searchCountries = (text) => (
     }
 )
 
+
+const clearAllSearch = () => (
+    {
+      type: 'CLEAR_ALL_SEARCH',
+    }
+)
+
 const searchCategories = (text) => (
 
     (dispatch) => {
@@ -31,5 +38,6 @@ const searchCategories = (text) => (
 
 export default {
   searchCountries,
-  searchCategories
+  searchCategories,
+  clearAllSearch
 };

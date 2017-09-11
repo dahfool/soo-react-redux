@@ -40,6 +40,18 @@ actions) => {
         },
         activeField: 'categories'
       }
+    case 'CLEAR_ALL_SEARCH':
+      return {
+        ...state,
+        country: {
+          ...state.country,
+          countryList: []
+        },
+        category: {
+          ...state.category,
+          categoryList: []
+        },
+      }
     default:
       return state
   }
