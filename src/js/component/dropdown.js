@@ -9,6 +9,6 @@ const Dropdown = ({results, onClick, active}) => {
         </div>
       </div>
   )
-}
+};
 
 export default Dropdown;

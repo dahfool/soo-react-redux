@@ -1,4 +1,3 @@
-
 import axios from 'axios'
 
 const searchCountries = (text) => (
@@ -13,14 +12,14 @@ const searchCountries = (text) => (
                 dispatch({type: 'FETCH_REJECTED', payload: err})
             })
     }
-)
+);
 
 
 const clearAllSearch = () => (
     {
       type: 'CLEAR_ALL_SEARCH',
     }
-)
+);
 
 const searchCategories = (text) => (
 
@@ -34,7 +33,7 @@ const searchCategories = (text) => (
                 dispatch({type: 'FETCH_REJECTED', payload: err})
             })
     }
-)
+);
 
 export default {
   searchCountries,

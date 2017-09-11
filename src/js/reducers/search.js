@@ -28,7 +28,7 @@ actions) => {
           countryList: actions.payload.data
         },
         activeField: 'countries'
-      }
+      };
     case 'FETCH_CATEGORIES_FULFILLED':
       return {
         ...state,
@@ -39,7 +39,7 @@ actions) => {
           categoryList: actions.payload.data
         },
         activeField: 'categories'
-      }
+      };
     case 'CLEAR_ALL_SEARCH':
       return {
         ...state,
@@ -51,10 +51,10 @@ actions) => {
           ...state.category,
           categoryList: []
         },
-      }
+      };
     default:
       return state
   }
-}
+};
 
 export default search;

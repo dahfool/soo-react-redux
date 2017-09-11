@@ -2,20 +2,20 @@ import { connect } from 'react-redux'
 import Tag from '../component/tag'
 import tag from '../actions/tagActions'
 
-const mapStateToProps = (state, ownProps) => ({
-  buttons: ownProps.data,
-  active: ownProps.active
-})
+const mapStateToProps = (state, props) => ({
+  buttons: props.data,
+  active: props.active
+});
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch  ) => ({
   onClick: (button) => {
     dispatch(tag.deleteTag(button))
   }
-})
+});
 
 const connectTag = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Tag)
+)(Tag);
 
 export default connectTag;

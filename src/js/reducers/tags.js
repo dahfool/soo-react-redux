@@ -31,6 +31,6 @@ actions) => {
       default:
       return state
   }
-}
+};
 
 export default tags;
