@@ -20,7 +20,7 @@ module.exports = {
         ]
     },
     output: {
-        path: "public",
+        path: "/",
         filename: "js/bundle.min.js"
     },
     plugins: debug ? [] : [
