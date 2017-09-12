@@ -1,32 +1,33 @@
-import React, { Component} from 'react'
-import {connect} from 'react-redux';
-import Dropdown from '../containers/dropdown'
-import Input from '../containers/input'
-import Tag from '../containers/tag'
-
+import React from 'react'
+import SearchSection from '../containers/searchSection'
 
 const App = (data) => {
 
     return (
        <div>
          <form>
-           <Input id='categories' placeholder='Product type' aria='categorieshelp'>What do you sell ?</Input>
-           <Dropdown data={data.categories} active="categories"/>
-           <Tag data={data.categoriesTag} active="categories"/>
-           <Input id='countries' placeholder='Country name' aria='countrieshelp'>Where do you want to sell ?</Input>
-           <Dropdown  data={data.countries} active="countries"/>
-           <Tag data={data.countriesTag} active="countries"/>
+            <SearchSection
+              id='categories'
+              placeholder='Product type'
+              aria='categorieshelp'
+              data={data.state.search.category.categoryList}
+              tags={data.state.tags.categories}
+            >
+              What do you sell ?
+            </SearchSection>
+            <SearchSection
+              id='countries'
+              placeholder='Country name'
+              aria='countrieshelp'
+              data={data.state.search.country.countryList}
+              tags={data.state.tags.countries}
+            >
+              Where do you want to sell ?
+            </SearchSection>
            <button type='submit' className='btn btn-primary'>Find marketplaces</button>
          </form>
        </div>
     )
 };
 
-const mapStateToProps = (state) => ({
-    countries: state.search.country.countryList,
-    categories: state.search.category.categoryList,
-    countriesTag: state.tags.countries,
-    categoriesTag: state.tags.categories,
-});
-
-export default connect(mapStateToProps)(App);
+export default App;
