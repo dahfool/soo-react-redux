@@ -1,10 +1,10 @@
 import express from 'express';
-import Categories from '../../db/models/categories'
+import Countries from '../../db/models/countries'
 
 let router = express.Router();
 
 router.get('/', (req, res, next)=> {
-    Categories.distinct('name').then((doc) =>{
+    Countries.distinct('name').then((doc) => {
         res.json(doc);
     },(e)=>{
         res.send(e)

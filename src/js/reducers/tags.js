@@ -8,12 +8,12 @@ actions) => {
     if(actions.payload.active === 'countries') {
       return {
         ...state,
-        countries: [...state.countries, actions.payload.result.text],
+        countries: [...state.countries, actions.payload.result],
       };
     } else {
       return {
         ...state,
-        categories: [...state.categories, actions.payload.result.text],
+        categories: [...state.categories, actions.payload.result],
       };
     }
     case 'DELETE_TAG':

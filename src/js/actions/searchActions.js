@@ -4,7 +4,7 @@ const searchCountries = (text) => (
 
     (dispatch) => {
         dispatch({type: 'FETCH_PENDING'})
-        axios.get("http://rest.learncode.academy/api/test123/tweets")
+        axios.get("/api/countries")
             .then((response) => {
                 dispatch({type: 'FETCH_COUNTRIES_FULFILLED', payload: {data: response.data, searchTerm: text}})
             })
@@ -25,7 +25,7 @@ const searchCategories = (text) => (
 
     (dispatch) => {
         dispatch({type: 'FETCH_PENDING'})
-        axios.get("http://rest.learncode.academy/api/test123/tweets")
+        axios.get("/api/categories")
             .then((response) => {
                 dispatch({type: 'FETCH_CATEGORIES_FULFILLED', payload: {data: response.data, searchTerm: text}})
             })
