@@ -1,8 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Dropdown from '../containers/dropdown'
 import Input from '../containers/input'
 import Tag from '../containers/tag'
-
 
 const SearchSection = (data) => {
 
@@ -13,6 +13,10 @@ const SearchSection = (data) => {
            <Tag data={data.tags} active={data.id}/>
        </div>
     )
+};
+
+SearchSection.PropTypes = {
+    data: PropTypes.object.isRequired
 };
 
 export default SearchSection;

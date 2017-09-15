@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import SearchSection from '../containers/searchSection'
 
 const App = ({categories, countries, countriesTags, categoriesTags}) => {
@@ -28,6 +30,13 @@ const App = ({categories, countries, countriesTags, categoriesTags}) => {
          </form>
        </div>
     )
+};
+
+App.PropTypes = {
+    categories: PropTypes.array.isRequired,
+    countries: PropTypes.array.isRequired,
+    countriesTags: PropTypes.array.isRequired,
+    categoriesTags: PropTypes.array.isRequired
 };
 
 export default App;

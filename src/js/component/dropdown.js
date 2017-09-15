@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Dropdown = ({results, onClick, active}) => {
 
@@ -9,6 +10,12 @@ const Dropdown = ({results, onClick, active}) => {
         </div>
       </div>
   )
+};
+
+Dropdown.PropTypes = {
+    results: PropTypes.array.isRequired,
+    onClick: PropTypes.func.isRequired,
+    active: PropTypes.string.isRequired
 };
 
 export default Dropdown;

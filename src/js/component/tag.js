@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const tag = ({buttons, onClick, active}) => {
+const Tag = ({buttons, onClick, active}) => {
 
   return (
     <div>
@@ -9,4 +10,11 @@ const tag = ({buttons, onClick, active}) => {
   )
 };
 
-export default tag;
+Tag.PropTypes = {
+  buttons : PropTypes.array.isRequired,
+  onClick : PropTypes.func.isRequired,
+  active : PropTypes.string.isRequired
+
+}
+
+export default Tag;

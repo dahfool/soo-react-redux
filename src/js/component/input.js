@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Input = ({inputField, children, onChange}) => {
 
@@ -9,5 +10,11 @@ const Input = ({inputField, children, onChange}) => {
     </div>
   )
 };
+
+Input.PropTypes = {
+    inputField: PropTypes.object.isRequired,
+    children: PropTypes.element.isRequired,
+    onChange: PropTypes.func.isRequired
+}
 
 export default Input;
