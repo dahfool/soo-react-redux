@@ -3,8 +3,8 @@ import Countries from '../../db/models/countries'
 
 let router = express.Router();
 
-router.get('/', (req, res, next)=> {
-    Countries.distinct('name').then((doc) => {
+router.get('/:country', (req, res, next)=> {
+    Countries.find({ name: {$regex : req.params.country,$options:'i' }}).distinct('name').then((doc) => {
         res.json(doc);
     },(e)=>{
         res.send(e)

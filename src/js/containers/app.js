@@ -1,20 +1,17 @@
 import { connect } from 'react-redux'
 import App from '../component/app'
 
-const mapStateToProps = (state, props) => ({
-  state,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  onClick: (result, active) => {
-    dispatch(tag.addTag({result, active}));
-    dispatch(search.clearAllSearch());
+const mapStateToProps = (state) => (
+  {
+    categories: state.search.category.categoryList,
+    countries: state.search.country.countryList,
+    countriesTags: state.tags.countries,
+    categoriesTags: state.tags.categories
   }
-});
+);
 
 const connectApp = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(App);
 
 export default connectApp;

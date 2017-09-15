@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchSection from '../containers/searchSection'
 
-const App = (data) => {
+const App = ({categories, countries, countriesTags, categoriesTags}) => {
 
     return (
        <div>
@@ -10,8 +10,8 @@ const App = (data) => {
               id='categories'
               placeholder='Product type'
               aria='categorieshelp'
-              data={data.state.search.category.categoryList}
-              tags={data.state.tags.categories}
+              data={categories}
+              tags={categoriesTags}
             >
               What do you sell ?
             </SearchSection>
@@ -19,8 +19,8 @@ const App = (data) => {
               id='countries'
               placeholder='Country name'
               aria='countrieshelp'
-              data={data.state.search.country.countryList}
-              tags={data.state.tags.countries}
+              data={countries}
+              tags={countriesTags}
             >
               Where do you want to sell ?
             </SearchSection>

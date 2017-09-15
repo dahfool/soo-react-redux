@@ -5,11 +5,8 @@ import search from '../actions/searchActions'
 
 const mapStateToProps = (state, props) => ({});
 
-const mapDispatchToProps = (dispatch) => ({});
-
 const connectSearchSection = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(SearchSection);
 
 export default connectSearchSection;

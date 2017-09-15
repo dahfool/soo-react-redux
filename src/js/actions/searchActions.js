@@ -3,8 +3,8 @@ import axios from 'axios'
 const searchCountries = (text) => (
 
     (dispatch) => {
-        dispatch({type: 'FETCH_PENDING'})
-        axios.get("/api/countries")
+        dispatch({type: 'FETCH_PENDING'});
+        axios.get(`/api/countries/${text}`)
             .then((response) => {
                 dispatch({type: 'FETCH_COUNTRIES_FULFILLED', payload: {data: response.data, searchTerm: text}})
             })
@@ -24,8 +24,8 @@ const clearAllSearch = () => (
 const searchCategories = (text) => (
 
     (dispatch) => {
-        dispatch({type: 'FETCH_PENDING'})
-        axios.get("/api/categories")
+        dispatch({type: 'FETCH_PENDING'});
+        axios.get(`/api/categories/${text}`)
             .then((response) => {
                 dispatch({type: 'FETCH_CATEGORIES_FULFILLED', payload: {data: response.data, searchTerm: text}})
             })

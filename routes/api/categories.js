@@ -3,8 +3,8 @@ import Categories from '../../db/models/categories'
 
 let router = express.Router();
 
-router.get('/', (req, res, next)=> {
-    Categories.distinct('name').then((doc) =>{
+router.get('/:category', (req, res, next)=> {
+    Categories.find({ name: {$regex : req.params.category, $options:'i' }}).distinct('name').then((doc) =>{
         res.json(doc);
     },(e)=>{
         res.send(e)
