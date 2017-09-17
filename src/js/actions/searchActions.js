@@ -1,16 +1,14 @@
-import axios from 'axios'
-
 const searchCountries = (text) => (
 
     (dispatch) => {
         dispatch({type: 'FETCH_PENDING'});
-        axios.get(`/api/countries/${text}`)
-            .then((response) => {
-                dispatch({type: 'FETCH_COUNTRIES_FULFILLED', payload: {data: response.data, searchTerm: text}})
+
+        fetch(`/api/countries/${text}`, { method: 'get'})
+            .then(response => response.json())
+            .then(data => {
+                dispatch({type: 'FETCH_COUNTRIES_FULFILLED', payload: { data, searchTerm: text} })
             })
-            .catch((err) => {
-                dispatch({type: 'FETCH_REJECTED', payload: err})
-            })
+            .catch((err) => { dispatch({type: 'FETCH_REJECTED', payload: err}) })
     }
 );
 
@@ -25,13 +23,12 @@ const searchCategories = (text) => (
 
     (dispatch) => {
         dispatch({type: 'FETCH_PENDING'});
-        axios.get(`/api/categories/${text}`)
-            .then((response) => {
-                dispatch({type: 'FETCH_CATEGORIES_FULFILLED', payload: {data: response.data, searchTerm: text}})
+        fetch(`/api/categories/${text}`, { method: 'get'})
+            .then(response => response.json())
+            .then((data) => {
+                dispatch({type: 'FETCH_CATEGORIES_FULFILLED', payload: { data, searchTerm: text} })
             })
-            .catch((err) => {
-                dispatch({type: 'FETCH_REJECTED', payload: err})
-            })
+            .catch((err) => { dispatch({type: 'FETCH_REJECTED', payload: err}) })
     }
 );
 
