@@ -6,6 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --content-base public --inline --hot",
     "server": "node_modules/.bin/babel-node server.js",
+    "migrations": "node_modules/.bin/babel-node db/migrations/migrations.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
