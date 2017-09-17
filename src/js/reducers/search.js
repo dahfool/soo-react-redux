@@ -17,7 +17,7 @@ actions) => {
     case 'FETCH_PENDING':
       return {...state, fetching: true};
     case 'FETCH_REJECTED':
-      return {...state, fetching: false, error: actions.payload.data};
+      return {...state, fetching: false, error: actions.payload};
     case 'FETCH_COUNTRIES_FULFILLED':
       return {
         ...state,
