@@ -2,33 +2,24 @@ const tags = (state = {
   countries: [],
   categories: []
 },
-actions) => {
-  switch (actions.type) {
-    case 'ADD_TAG':
-    if(actions.payload.active === 'countries') {
+action
+) => {
+  switch (action.type) {
+    case 'ADD_TAG': {
+      const {payload: {result, active}} = action
       return {
         ...state,
-        countries: [...state.countries, actions.payload.result],
-      };
-    } else {
-      return {
-        ...state,
-        categories: [...state.categories, actions.payload.result],
+        [active]: [...state[active], result],
       };
     }
-    case 'DELETE_TAG':
-      if(actions.payload.active === 'countries') {
-        return {
-          ...state,
-          countries: state.countries.filter(item => actions.payload.button !== item),
-        };
-      } else {
-        return {
-          ...state,
-          categories: state.categories.filter(item => actions.payload.button !== item)
-        };
-      }
-      default:
+    case 'DELETE_TAG': {
+      const {payload: {button, active}} = action
+      return {
+        ...state,
+        [active]: state[active].filter(item => button !== item),
+      };
+    }
+    default:
       return state
   }
 };
