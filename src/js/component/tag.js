@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Tag = ({buttons, onClick, active}) => {
+const Tag = ({props, active, onClick}) => {
 
   return (
     <div>
-      {buttons.map((button, i) => (<button key={i} type="button" className="btn btn-light">{button}<span onClick={()=>onClick({button, active})}>x</span></button>))}
+      {props.map((button, i) => (<button key={i} type="button" className="btn btn-light">{button}<span onClick={()=>onClick({button, active})}>x</span></button>))}
     </div>
   )
 };

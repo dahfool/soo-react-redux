@@ -1,22 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Dropdown from '../containers/dropdown'
-import Input from '../containers/input'
-import Tag from '../containers/tag'
+import Dropdown from '../component/dropdown'
+import Input from '../component/input'
+import Tag from '../component/tag'
 
-const SearchSection = (data) => {
+const SearchSection = ({props, onInputChange, onDropdownClick, onTagClick}) => {
 
     return (
        <div>
-           <Input id={data.id} placeholder={data.placeholder} aria={data.aria}>{data.children}</Input>
-           <Dropdown data={data.data} active={data.id}/>
-           <Tag data={data.tags} active={data.id}/>
+           <Input id={props.id} placeholder={props.placeholder} aria={props.aria} onChange={onInputChange}>{props.children}</Input>
+           <Dropdown props={props.data} active={props.id} onClick={onDropdownClick}/>
+           <Tag props={props.tags} active={props.id} onClick={onTagClick}/>
        </div>
     )
 };
 
 SearchSection.PropTypes = {
-    data: PropTypes.object.isRequired
+    props: PropTypes.object.isRequired
 };
 
 export default SearchSection;
