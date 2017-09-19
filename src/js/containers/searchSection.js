@@ -9,11 +9,7 @@ const mapStateToProps = (state, props) => ({
 
 const mapDispatchToProps = (dispatch, props) => ({
     onInputChange: (value) => {
-        if(props.id === 'categories') {
-            dispatch(search.searchCategories(value))
-        } else {
-            dispatch(search.searchCountries(value))
-        }
+        dispatch(search.search(value, props.id))
     },
     onDropdownClick: (result, active) => {
         dispatch(tag.addTag({result, active}));

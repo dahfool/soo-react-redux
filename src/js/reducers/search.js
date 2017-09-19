@@ -1,11 +1,11 @@
 const search = (state = {
-  country: {
+  countries: {
     searchTerm: '',
-    countryList: []
+    result: []
   },
-  category: {
+  categories: {
     searchTerm: '',
-    categoryList: []
+    result: []
   },
   activeField: null,
   fetching: false,
@@ -18,38 +18,27 @@ actions) => {
       return {...state, fetching: true};
     case 'FETCH_REJECTED':
       return {...state, fetching: false, error: actions.payload};
-    case 'FETCH_COUNTRIES_FULFILLED':
+    case 'FETCH_FULFILLED':
       return {
         ...state,
         fetching: false,
         fetched: true,
-        country: {
-          searchTerm: actions.payload.searchTerm,
-          countryList: actions.payload.data
+        [actions.payload.searchSection] : {
+            searchTerm: actions.payload.searchTerm,
+            result: actions.payload.data
         },
-        activeField: 'countries'
-      };
-    case 'FETCH_CATEGORIES_FULFILLED':
-      return {
-        ...state,
-        fetching: false,
-        fetched: true,
-        category: {
-          searchTerm: actions.payload.searchTerm,
-          categoryList: actions.payload.data
-        },
-        activeField: 'categories'
+        activeField: actions.payload.searchSection
       };
     case 'CLEAR_ALL_SEARCH':
       return {
         ...state,
-        country: {
-          ...state.country,
-          countryList: []
+        countries: {
+          ...state.countries,
+          result: []
         },
-        category: {
-          ...state.category,
-          categoryList: []
+        categories: {
+          ...state.categories,
+          result: []
         },
       };
     default:

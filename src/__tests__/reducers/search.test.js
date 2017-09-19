@@ -4,13 +4,13 @@ import search from '../../js/reducers/search'
 describe('search reducer', () => {
     it('Should handle initial state', () => {
         expect(search(undefined, { type: '@@INIT' })).toEqual({
-                country: {
+                countries: {
                     searchTerm: '',
-                    countryList: []
+                    result: []
                 },
-                category: {
+                categories: {
                     searchTerm: '',
-                    categoryList: []
+                    result: []
                 },
                 activeField: null,
                 fetching: false,

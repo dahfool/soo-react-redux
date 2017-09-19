@@ -4,13 +4,13 @@ describe('root reducer', () => {
     it('should combine all reducers', () => {
         expect(reducers({}, { type: '@@INIT' })).toEqual({
             search: {
-                country: {
+                countries: {
                     searchTerm: '',
-                    countryList: []
+                    result: []
                 },
-                category: {
+                categories: {
                     searchTerm: '',
-                    categoryList: []
+                    result: []
                 },
                 activeField: null,
                 fetching: false,

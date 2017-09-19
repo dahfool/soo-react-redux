@@ -3,8 +3,8 @@ import App from '../component/app'
 
 const mapStateToProps = (state) => (
   {
-    categories: state.search.category.categoryList,
-    countries: state.search.country.countryList,
+    categories: state.search.categories.result,
+    countries: state.search.countries.result,
     countriesTags: state.tags.countries,
     categoriesTags: state.tags.categories
   }
