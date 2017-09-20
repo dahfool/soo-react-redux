@@ -10,11 +10,10 @@ const Tag = ({props, active, onClick}) => {
   )
 };
 
-Tag.PropTypes = {
-  buttons : PropTypes.array.isRequired,
-  onClick : PropTypes.func.isRequired,
-  active : PropTypes.string.isRequired
-
-}
+Tag.propTypes = {
+  props : PropTypes.array.isRequired,
+  active : PropTypes.string.isRequired,
+  onClick : PropTypes.func.isRequired
+};
 
 export default Tag;

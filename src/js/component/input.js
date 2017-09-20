@@ -11,10 +11,12 @@ const Input = ({id, aria, placeholder, children, onChange}) => {
   )
 };
 
-Input.PropTypes = {
-    inputField: PropTypes.object.isRequired,
-    children: PropTypes.element.isRequired,
+Input.propTypes = {
+    id: PropTypes.string.isRequired,
+    aria: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    children: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired
-}
+};
 
 export default Input;

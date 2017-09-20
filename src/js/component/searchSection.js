@@ -15,8 +15,11 @@ const SearchSection = ({props, onInputChange, onDropdownClick, onTagClick}) => {
     )
 };
 
-SearchSection.PropTypes = {
-    props: PropTypes.object.isRequired
+SearchSection.propTypes = {
+    props: PropTypes.object.isRequired,
+    onInputChange: PropTypes.func.isRequired,
+    onDropdownClick: PropTypes.func.isRequired,
+    onTagClick: PropTypes.func.isRequired
 };
 
 export default SearchSection;

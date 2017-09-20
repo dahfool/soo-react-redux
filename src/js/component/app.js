@@ -32,7 +32,7 @@ const App = ({categories, countries, countriesTags, categoriesTags}) => {
     )
 };
 
-App.PropTypes = {
+App.propTypes = {
     categories: PropTypes.array.isRequired,
     countries: PropTypes.array.isRequired,
     countriesTags: PropTypes.array.isRequired,

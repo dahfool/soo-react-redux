@@ -12,10 +12,10 @@ const Dropdown = ({props, active, onClick}) => {
   )
 };
 
-Dropdown.PropTypes = {
-    results: PropTypes.array.isRequired,
-    onClick: PropTypes.func.isRequired,
-    active: PropTypes.string.isRequired
+Dropdown.propTypes = {
+    props: PropTypes.array.isRequired,
+    active: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired
 };
 
 export default Dropdown;
