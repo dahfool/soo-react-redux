@@ -1,6 +1,6 @@
 ### Install
 
-`npm install`
+`yarn install` or `npm install`
 
 #### Database
 
