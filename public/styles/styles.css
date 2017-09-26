@@ -1,0 +1,11 @@
+.btn-group {
+    display: block;
+}
+
+.btn {
+    margin-bottom: 5px;
+}
+
+.btn span {
+    margin-left: 10px;
+}

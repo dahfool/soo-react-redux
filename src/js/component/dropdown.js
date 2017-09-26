@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 
 const Dropdown = ({props, active, onClick}) => {
 
-  return (
-      <div className="dropdown show">
-        <div className="dropdown-menu show" aria-labelledby="dropdownMenuButton">
+    let dropdown = props.length > 0 ? 'dropdown-menu show' : 'dropdown-menu';
+
+    return (
+        <div className={dropdown} aria-labelledby="dropdownMenuButton">
           {props.map((result, i) => (<a className="dropdown-item" key={i} href="#" onClick={()=>onClick(result, active)}>{result}</a>))}
         </div>
-      </div>
-  )
+    )
 };
 
 Dropdown.propTypes = {
