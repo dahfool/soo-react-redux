@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/dahfool/soo-react-redux.svg?style=svg)](https://circleci.com/gh/dahfool/soo-react-redux)
+
 ### Install
 
 `yarn install` or `npm install`
