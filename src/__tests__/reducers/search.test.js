@@ -18,4 +18,19 @@ describe('search reducer', () => {
                 error: null
         });
     });
+
+
+    it('Should fetch in pending state', async () => {
+
+    });
+
+    it('Should fetch in fullfilled state', async () => {
+
+    });
+
+    it('Should fetch in rejected state', async () => {
+
+    });
+
+
 });
