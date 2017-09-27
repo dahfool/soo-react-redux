@@ -7,20 +7,39 @@ const clearAllSearch = () => (
 const search = (searchTerm, searchSection) => (
 
     async (dispatch) => {
-        dispatch({type: 'FETCH_PENDING'});
+        dispatch(pending());
 
         try {
             const response = await fetch(`/api/${searchSection}/${searchTerm}`, {method: 'get'});
             const data = await response.json();
-            dispatch({type: 'FETCH_FULFILLED', payload: {data, searchTerm, searchSection}})
+            dispatch(fetched(data, searchTerm, searchSection))
         } catch (err) {
-            dispatch({type: 'FETCH_REJECTED', payload: err});
+            dispatch(rejected(err));
         }
-
     }
 );
+const fetched = (data, searchTerm, searchSection) => ({
+    type: 'FETCH_FULFILLED',
+    payload: {
+        data,
+        searchTerm,
+        searchSection
+    }
+});
+
+const rejected = (err) => ({
+    type: 'FETCH_REJECTED',
+    payload: {
+        payload: err
+    }
+});
+
+const pending = () => ({type: 'FETCH_PENDING'});
 
 export default {
-  search,
-  clearAllSearch
+    pending,
+    fetched,
+    rejected,
+    search,
+    clearAllSearch
 };
