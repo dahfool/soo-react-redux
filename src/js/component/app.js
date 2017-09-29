@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import SearchSection from '../containers/searchSection'
 
-const App = ({categories, countries, countriesTags, categoriesTags}) => {
+const App = ({categories, countries, countriesTags, categoriesTags, onSubmit}) => {
 
     return (
        <div>
@@ -26,7 +26,7 @@ const App = ({categories, countries, countriesTags, categoriesTags}) => {
             >
               Where do you want to sell ?
             </SearchSection>
-           <button type='submit' className='btn btn-primary'>Find marketplaces</button>
+           <button type='submit' className='btn btn-primary' onClick={(e)=>onSubmit(e, 'markets')}>Find marketplaces</button>
          </form>
        </div>
     )
@@ -36,7 +36,8 @@ App.propTypes = {
     categories: PropTypes.array.isRequired,
     countries: PropTypes.array.isRequired,
     countriesTags: PropTypes.array.isRequired,
-    categoriesTags: PropTypes.array.isRequired
+    categoriesTags: PropTypes.array.isRequired,
+    onSubmit: PropTypes.func.isRequired,
 };
 
 export default App;

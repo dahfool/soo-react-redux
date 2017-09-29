@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import App from '../component/app'
+import { navigate } from '../actions/routing'
 
 const mapStateToProps = (state) => (
   {
@@ -10,8 +11,16 @@ const mapStateToProps = (state) => (
   }
 );
 
+const mapDispatchToProps = (dispatch, props) => ({
+    onSubmit: (e, page) => {
+        e.preventDefault();
+        dispatch(navigate(page));
+    },
+});
+
 const connectApp = connect(
-  mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(App);
 
 export default connectApp;

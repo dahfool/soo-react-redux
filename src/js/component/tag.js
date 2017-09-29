@@ -5,7 +5,7 @@ const Tag = ({props, active, onClick}) => {
 
   return (
     <div>
-      {props.map((button, i) => (<button key={i} type="button" className="btn btn-light">{button}<span onClick={()=>onClick({button, active})}>x</span></button>))}
+      {props.map((button, i) => (<button key={i} type="button" className="btn btn-secondary">{button}<span onClick={()=>onClick({button, active})}>x</span></button>))}
     </div>
   )
 };

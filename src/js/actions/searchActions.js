@@ -18,6 +18,7 @@ const search = (searchTerm, searchSection) => (
         }
     }
 );
+
 const fetched = (data, searchTerm, searchSection) => ({
     type: 'FETCH_FULFILLED',
     payload: {

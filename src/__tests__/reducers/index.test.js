@@ -3,6 +3,9 @@ import reducers from '../../js/reducers'
 describe('root reducer', () => {
     it('should combine all reducers', () => {
         expect(reducers({}, { type: '@@INIT' })).toEqual({
+            routing: {
+              location: null
+            },
             search: {
                 countries: {
                     searchTerm: '',

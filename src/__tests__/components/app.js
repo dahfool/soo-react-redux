@@ -5,7 +5,11 @@ import App from '../../js/component/app'
 
 const setup = (categories=[], countries=[], countriesTags=[], categoriesTags=[]) => {
 
-    const component = shallow(<App categories={categories} countries={countries} categoriesTags={categoriesTags} countriesTags={countriesTags} />)
+    const actions = {
+        onSubmit: jest.fn()
+    };
+
+    const component = shallow(<App categories={categories} countries={countries} categoriesTags={categoriesTags} countriesTags={countriesTags} {...actions}/>)
 
     return {
         component,
