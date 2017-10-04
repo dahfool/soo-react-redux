@@ -10,7 +10,7 @@ const search = (searchTerm, searchSection) => (
         dispatch(pending());
 
         try {
-            const response = await fetch(`http://localhost:3001/api/${searchSection}/${searchTerm}`, {method: 'get'});
+            const response = await fetch(`http://localhost:5000/api/${searchSection}/${searchTerm}`, {method: 'get'});
             const data = await response.json();
             dispatch(fetched(data, searchTerm, searchSection))
         } catch (err) {

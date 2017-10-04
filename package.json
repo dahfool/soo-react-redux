@@ -1,5 +1,5 @@
 {
-  "name": "soo-widgets-2",
+  "name": "soo-widgets",
   "version": "0.1.0",
   "main": "./src/index.js",
   "private": true,
@@ -29,7 +29,7 @@
     "test": "CI=true react-scripts test --env=jsdom",
     "test-watch": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server": "babel-node --presets es2015 db/server.js",
+    "server": "babel-node --presets es2015 server.js",
     "migrations": "babel-node --presets es2015 db/migrations/migrations.js"
   }
 }

@@ -1,21 +1,10 @@
 import express from'express'
-// import webpack from 'webpack'
-// import webpackDevMiddleware from 'webpack-dev-middleware'
 import bodyParser from 'body-parser'
-// import webpackConfig from './webpack.config'
-import categories from '../routes/api/categories'
-import countries from '../routes/api/countries'
-import path from 'path'
+import categories from './routes/api/categories'
+import countries from './routes/api/countries'
 
 const app = express();
 
-// app.use(webpackDevMiddleware(webpack(webpackConfig)));
-// app.use(bodyParser.urlencoded({
-//     extended: true
-// }));
-
-
-//now we should configure the API to use bodyParser and look for JSON data in the request body
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -31,7 +20,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-// app.use(express.static(__dirname+'/public'));
 
 app.use('/api/categories', categories);
 app.use('/api/countries', countries);
@@ -41,6 +29,6 @@ app.get('*', function (req, res){
 })
 
 
-app.listen(3001, ()=> {
-    console.log(`Server on port ${3001}`)
+app.listen(5000, ()=> {
+    console.log(`Server on port ${5000}`)
 });

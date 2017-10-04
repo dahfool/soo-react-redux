@@ -7,7 +7,7 @@ const Dropdown = ({props, active, onClick}) => {
 
     return (
         <div className={dropdown} aria-labelledby="dropdownMenuButton">
-          {props.map((result, i) => (<a className="dropdown-item" key={i} href="#" onClick={()=>onClick(result, active)}>{result}</a>))}
+          {props.map((result, i) => (<button className="dropdown-item" key={i} onClick={()=>onClick(result, active)}>{result}</button>))}
         </div>
     )
 };
