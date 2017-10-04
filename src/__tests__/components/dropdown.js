@@ -13,26 +13,26 @@ const setup = (props=[], active='') => {
 
     return {
         actions,
-        links: component.find('a')
+        buttons: component.find('button')
     }
 
 };
 
 describe('Dropdown component', () => {
 
-    it('should have no link in dropdown', () => {
-        const { links } = setup();
-        expect(links.length).toEqual(0)
+    it('should have no buttons in dropdown', () => {
+        const { buttons } = setup();
+        expect(buttons.length).toEqual(0)
     });
 
-    it('should render 2 links in dropdown', () => {
-        const { links } = setup(['jewellery', 'technology']);
-        expect(links.length).toEqual(2)
+    it('should render 2 buttons in dropdown', () => {
+        const { buttons } = setup(['jewellery', 'technology']);
+        expect(buttons.length).toEqual(2)
     });
 
     it('Should call action on link click',() => {
-        const { links, actions } = setup(['jewellery'], 'categories');
-        links.at(0).simulate('click');
+        const { buttons, actions } = setup(['jewellery'], 'categories');
+        buttons.at(0).simulate('click');
         expect(actions.onClick).toBeCalled();
     });
 
