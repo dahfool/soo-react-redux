@@ -1,4 +1,4 @@
-import reducers from '../../js/reducers'
+import reducers from '../../reducers'
 
 describe('root reducer', () => {
     it('should combine all reducers', () => {

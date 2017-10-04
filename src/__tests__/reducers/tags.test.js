@@ -1,5 +1,5 @@
-import tag from '../../js/actions/tagActions'
-import tags from '../../js/reducers/tags'
+import tag from '../../actions/tagActions'
+import tags from '../../reducers/tags'
 
 describe('tags reducer', () => {
     it('should handle initial state', () => {

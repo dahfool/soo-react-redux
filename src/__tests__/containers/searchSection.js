@@ -1,4 +1,4 @@
-import searchSection from '../../js/containers/searchSection'
+import searchSection from '../../containers/searchSection'
 import { dispatch, dispatchProps, props, state } from 'react-redux'
 
 jest.mock('react-redux', () => {

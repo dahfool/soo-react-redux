@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { shallow } from 'enzyme';
-import Dropdown from '../../js/component/dropdown'
+import Dropdown from '../../component/dropdown'
 
 const setup = (props=[], active='') => {
 

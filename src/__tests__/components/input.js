@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { shallow } from 'enzyme';
-import Input from '../../js/component/input'
+import Input from '../../component/input'
 
 const setup = (id='', aria= '', placeholder='', children='') => {
 
@@ -24,7 +24,7 @@ describe('Input component', () => {
     it('should have a label', () => {
         const { label } = setup('categories','','','What do you sell ?');
         expect(label.length).toEqual(1);
-        expect(label.prop('for')).toEqual('categories');
+        expect(label.prop('htmlFor')).toEqual('categories');
         expect(label.prop('children')).toEqual('What do you sell ?');
     });
 

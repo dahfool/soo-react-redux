@@ -1,4 +1,4 @@
-import searchAction from '../../js/actions/searchActions'
+import searchAction from '../../actions/searchActions'
 
 const response = ({json: jest.fn(() => 123)})
 window.fetch = jest.fn(() => Promise.resolve(response))

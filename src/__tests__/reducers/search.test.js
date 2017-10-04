@@ -1,5 +1,5 @@
-import searchAction from '../../js/actions/searchActions'
-import search from '../../js/reducers/search'
+import searchAction from '../../actions/searchActions'
+import search from '../../reducers/search'
 
 describe('search reducer', () => {
     it('Should handle initial state', () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { shallow } from 'enzyme';
-import Tag from '../../js/component/tag'
+import Tag from '../../component/tag'
 
 const setup = (props=[], active= '') => {
 

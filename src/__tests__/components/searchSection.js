@@ -1,10 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { shallow } from 'enzyme';
-import SearchSection from '../../js/component/searchSection'
-import Input from '../../js/component/input'
-import Dropdown from '../../js/component/dropdown'
-import Tag from '../../js/component/tag'
+import SearchSection from '../../component/searchSection'
+import Input from '../../component/input'
+import Dropdown from '../../component/dropdown'
+import Tag from '../../component/tag'
 
 const setup = (props={}) => {
 

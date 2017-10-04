@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { shallow } from 'enzyme';
-import App from '../../js/component/app'
+import App from '../../component/app'
 
 const setup = (categories=[], countries=[], countriesTags=[], categoriesTags=[]) => {
 
