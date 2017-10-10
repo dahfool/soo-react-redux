@@ -4,19 +4,21 @@ import Dropdown from '../component/dropdown'
 import Input from '../component/input'
 import Tag from '../component/tag'
 
-const SearchSection = ({props, onInputChange, onDropdownClick, onTagClick}) => {
+const SearchSection = ({...props}) => {
+
+
 
     return (
        <div className="btn-group">
-           <Input id={props.id} placeholder={props.placeholder} aria={props.aria} onChange={onInputChange}>{props.children}</Input>
-           <Dropdown props={props.data} active={props.id} onClick={onDropdownClick}/>
-           <Tag props={props.tags} active={props.id} onClick={onTagClick}/>
+           <Input id={props.id} placeholder={props.placeholder} aria={props.aria} onChange={(e)=>props.onInputChange(e, props.id)}>{props.children}</Input>
+           <Dropdown props={props.data} active={props.id} onClick={props.onDropdownClick}/>
+           <Tag props={props.tags} active={props.id} onClick={props.onTagClick}/>
        </div>
     )
 };
 
 SearchSection.propTypes = {
-    props: PropTypes.object.isRequired,
+    props: PropTypes.object,
     onInputChange: PropTypes.func.isRequired,
     onDropdownClick: PropTypes.func.isRequired,
     onTagClick: PropTypes.func.isRequired

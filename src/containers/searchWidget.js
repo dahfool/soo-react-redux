@@ -1,6 +1,8 @@
 import { connect } from 'react-redux'
-import App from '../component/app'
+import searchWidget from '../component/searchWidget'
 import { navigate } from '../actions/routing'
+import search from '../actions/searchActions'
+import tag from '../actions/tagActions'
 
 const mapStateToProps = (state) => (
   {
@@ -15,12 +17,21 @@ const mapDispatchToProps = (dispatch, props) => ({
     onSubmit: (e, page) => {
         e.preventDefault();
         dispatch(navigate(page));
+    },    onInputChange: (value, category) => {
+        dispatch(search.search(value, category))
     },
+    onDropdownClick: (result, active) => {
+        dispatch(tag.addTag({result, active}));
+        dispatch(search.clearAllSearch());
+    },
+    onTagClick: (button) => {
+        dispatch(tag.deleteTag(button))
+    }
 });
 
 const connectApp = connect(
     mapStateToProps,
     mapDispatchToProps
-)(App);
+)(searchWidget);
 
 export default connectApp;

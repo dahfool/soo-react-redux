@@ -2,10 +2,8 @@ import "babel-polyfill";
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { Route }  from 'react-router'
 import {  ConnectedRouter } from 'react-router-redux'
-import App from './containers/app'
-import Markets from './component/markets'
+import App from './component/app'
 
 import {store, history} from './store'
 
@@ -14,11 +12,10 @@ render (
       <ConnectedRouter history={history}>
           <div className='container'>
               <div className="mt-3">
-                  <Route exact={true} path="/" component={App}/>
-                  <Route path="/markets" component={Markets}/>
+                    <App />
               </div>
           </div>
       </ConnectedRouter>
-  </Provider>,  
+  </Provider>,
   document.getElementById('root')
 );

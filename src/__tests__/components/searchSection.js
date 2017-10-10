@@ -6,7 +6,7 @@ import Input from '../../component/input'
 import Dropdown from '../../component/dropdown'
 import Tag from '../../component/tag'
 
-const setup = (props={}) => {
+const setup = (id='', placeholder='', aria='', data=[], tags=[]  ) => {
 
     const actions = {
         onInputChange: jest.fn(),
@@ -14,7 +14,7 @@ const setup = (props={}) => {
         onTagClick: jest.fn()
     };
 
-    const component = shallow(<SearchSection props={props} {...actions} />)
+    const component = shallow(<SearchSection id={id} placeholder={placeholder} aria={aria} data={data} tags={tags}  {...actions}>test</SearchSection>)
 
     return {
         actions,
@@ -28,24 +28,13 @@ const setup = (props={}) => {
 let initialProps;
 describe('SearchSection component', () => {
 
-    beforeEach(() => {
-        initialProps = {
-            id: '',
-            placeholder: '',
-            aria: '',
-            children: '',
-            data: [],
-            tags: []
-        }
-    });
-
     it('should have a Input component', () => {
-        const { Input } = setup(initialProps);
+        const { Input } = setup();
         expect(Input.length).toEqual(1);
     });
 
     it('should have a Dropdown component', () => {
-        const { Dropdown } = setup(initialProps);
+        const { Dropdown } = setup();
         expect(Dropdown.length).toEqual(1);
     });
 

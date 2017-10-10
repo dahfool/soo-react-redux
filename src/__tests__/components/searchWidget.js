@@ -1,15 +1,18 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { shallow } from 'enzyme';
-import App from '../../component/app'
+import SearchWidget from '../../component/searchWidget'
 
 const setup = (categories=[], countries=[], countriesTags=[], categoriesTags=[]) => {
 
     const actions = {
-        onSubmit: jest.fn()
+        onSubmit: jest.fn(),
+        onInputChange: jest.fn(),
+        onDropdownClick: jest.fn(),
+        onTagClick: jest.fn()
     };
 
-    const component = shallow(<App categories={categories} countries={countries} categoriesTags={categoriesTags} countriesTags={countriesTags} {...actions}/>)
+    const component = shallow(<SearchWidget categories={categories} countries={countries} categoriesTags={categoriesTags} countriesTags={countriesTags} {...actions}/>)
 
     return {
         component,
